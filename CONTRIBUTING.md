@@ -1,60 +1,141 @@
-# Contributing to rustchain-bounties
+# Contributing to Rustchain
 
-This repo is the bounty board + automation for RustChain. PRs here should be small, clear, and auditable.
+Thank you for your interest in contributing to Rustchain! Every contribution helps build a stronger Proof-of-Antiquity blockchain ecosystem.
 
-## BCOS (Beacon Certified Open Source)
+## 🚀 Quick Start
 
-This repo uses BCOS checks to keep PRs auditable and license-clean.
+1. **Fork** the repository
+2. **Clone** your fork locally
+3. **Create a branch** for your changes (`git checkout -b feature/my-contribution`)
+4. **Make your changes** and test them
+5. **Commit** with a clear message
+6. **Push** to your fork and open a **Pull Request**
 
-- **Tier label required (non-doc PRs)**: Add `BCOS-L1` or `BCOS-L2` (also accepted: `bcos:l1`, `bcos:l2`).
-- **Doc-only exception**: PRs that only touch `docs/**`, `*.md`, or common image/PDF files do not require a tier label.
-- **SPDX required (new code files only)**: Newly added code files must include an SPDX header near the top, e.g. `# SPDX-License-Identifier: MIT`.
-- **Evidence artifacts**: CI uploads `bcos-artifacts` (SBOM, dependency license report, hashes, and a machine-readable attestation JSON).
+## 💰 Earning RTC Tokens
 
-When to pick a tier:
-- `BCOS-L1`: normal automation/docs/test improvements.
-- `BCOS-L2`: anything that touches payout automation, claim verification logic, or secrets handling.
+All merged contributions earn RTC tokens! See the bounty tiers:
 
-## PR Hygiene
+| Tier | Reward | Examples |
+| ---- | ------ | -------- |
+| Micro | 1-10 RTC | Typo fix, small docs, simple test |
+| Standard | 20-50 RTC | Feature, refactor, new endpoint |
+| Major | 75-100 RTC | Security fix, consensus improvement |
+| Critical | 100-150 RTC | Vulnerability patch, protocol upgrade |
 
-- One issue per PR when possible.
-- Include proof for bounty-related automation (sample output or test run).
-- Avoid adding vendored blobs; prefer pulling via package managers.
+Browse [open bounties](https://github.com/Scottcjn/rustchain-bounties/issues) to find tasks with specific RTC rewards.
 
-## Fast Claim Checklist (for paid bounties)
+## 📋 Types of Contributions
 
-Before opening your PR, make sure your submission is payout-ready:
+### Code
+- Bug fixes and feature implementations
+- Performance improvements
+- Test coverage improvements
+- CI/CD pipeline enhancements
 
-1. Link the bounty issue in the PR body (`Closes #<issue>` or `Refs #<issue>`).
-2. Keep the change scoped to one bounty objective.
-3. Attach evidence (logs/screenshots/CLI output) when the task is not self-evident from diff alone.
-4. Confirm CI is green (or explain any unrelated flaky failures).
-5. Add your RustChain wallet/handle exactly as requested in the issue template.
+### Documentation
+- README improvements
+- API documentation
+- Tutorials and guides
+- Code comments and docstrings
+- Translations (Spanish, Chinese, Japanese, etc.)
 
-This short checklist helps reviewers verify work quickly and reduces payout delays.
+### Community
+- Bug reports with reproduction steps
+- Feature requests with use cases
+- Code reviews on open PRs
+- Helping others in [Discord](https://discord.gg/VqVVS2CW9Q)
 
-## Maintainer Yes/No Checkpoint (Issue #87)
+## 🔧 Development Setup
 
-Before asking for payout or merge review, include this five-line packet:
+```bash
+# Clone your fork
+git clone https://github.com/YOUR_USERNAME/Rustchain.git
+cd Rustchain
 
-1. Issue link
-2. PR link
-3. Last commit link
-4. One-sentence scope statement
-5. One verification note
+# Install dependencies
+npm install  # or cargo build (for Rust components)
 
-Packet template: `docs/ISSUE_87_MINIMAL_ACCEPTANCE_PACKET.md`
+# Run tests
+npm test     # or cargo test
+```
 
+## 📝 Commit Message Convention
 
-## Supply-Chain Hygiene
+We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-If your PR changes dependencies, install scripts/docs, CI tooling, or external artifacts:
+```
+<type>(<scope>): <description>
 
-- pin versions and external references where possible
-- include commit SHAs for external repos
-- include checksum/digest for artifacts or images
-- avoid blind install commands (`curl | bash`)
-- document exact reproduction commands for reviewers
+[optional body]
+[optional footer]
+```
 
-See `docs/BOUNTY_HYGIENE.md` for details.
+**Types:**
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Code style (formatting, no logic change)
+- `refactor`: Code refactoring
+- `test`: Adding or updating tests
+- `chore`: Maintenance tasks (CI, dependencies)
+- `security`: Security-related changes
 
+**Examples:**
+```
+feat(bridge): add wRTC balance verification endpoint
+fix(consensus): correct PoA difficulty adjustment calculation
+docs(readme): add POWER8 hardware requirements section
+test(api): add integration tests for mining endpoints
+```
+
+## 🔍 Pull Request Guidelines
+
+### Before Submitting
+- [ ] Code follows the project's style guidelines
+- [ ] Self-review of your changes completed
+- [ ] Tests pass locally
+- [ ] New code includes appropriate tests
+- [ ] Documentation updated if needed
+
+### PR Description Template
+```markdown
+## What does this PR do?
+Brief description of changes.
+
+## Why?
+Motivation and context.
+
+## How to test?
+Steps to verify the changes work.
+
+## Related Issues
+Closes #<issue_number>
+```
+
+### Review Process
+1. A maintainer will review your PR within 48-72 hours
+2. Address any requested changes
+3. Once approved, a maintainer will merge your PR
+4. RTC tokens will be distributed after merge
+
+## 🎯 Good First Issues
+
+New to Rustchain? Start with issues labeled [`good first issue`](https://github.com/Scottcjn/Rustchain/labels/good%20first%20issue). These are specifically designed for newcomers.
+
+## ⚖️ Code of Conduct
+
+By participating in this project, you agree to maintain a respectful, inclusive, and harassment-free environment. Be kind, be constructive, and help each other grow.
+
+## 📬 Getting Help
+
+- **Discord**: [Join our server](https://discord.gg/VqVVS2CW9Q)
+- **GitHub Issues**: For bugs and feature requests
+- **Discussions**: For questions and ideas
+
+## License
+
+By contributing, you agree that your contributions will be licensed under the same license as the project (Apache 2.0).
+
+---
+
+**Happy contributing! Every PR brings Rustchain closer to its vision.** 🦀⛓️
